@@ -330,7 +330,7 @@ func (f *Frame) GetSideDataTypes() (map[uint32]string, error) {
 	return result, nil
 }
 
-func (f *Frame) GetUserData() ([]byte, error) {
+/*func (f *Frame) GetUserData() ([]byte, error) {
 	// get a pointer to the side data of the frame
 	sideDataPtr := C.av_frame_get_side_data(f.avFrame, C.AV_FRAME_DATA_SEI_UNREGISTERED)
 
@@ -345,7 +345,7 @@ func (f *Frame) GetUserData() ([]byte, error) {
 	data := C.GoBytes(unsafe.Pointer(sideData.data), C.int(sideData.size))
 
 	return data, nil
-}
+}*/
 
 func (f *Frame) GetTimeCode(avgFrameRate AVRational) (string, error) {
 	// get a pointer to the side data of the frame
