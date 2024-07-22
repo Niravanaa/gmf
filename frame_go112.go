@@ -3,43 +3,7 @@
 
 package gmf
 
-/*
-#cgo pkg-config: libavcodec libavutil
 
-#include <stdlib.h>
-#include "libavcodec/avcodec.h"
-#include "libavutil/frame.h"
-#include "libavutil/imgutils.h"
-#include "libavutil/timestamp.h"
-#include "libavutil/timecode.h"
-#include "libavutil/common.h"
-
-void gmf_set_frame_data(AVFrame *frame, int idx, int l_size, uint8_t data) {
-    if(!frame) {
-        fprintf(stderr, "frame is NULL\n");
-    }
-
-    frame->data[idx][l_size] = data;
-}
-
-int gmf_get_frame_line_size(AVFrame *frame, int idx) {
-	return frame->linesize[idx];
-}
-
-void gmf_free_data(AVFrame *frame) {
-	av_freep(&frame->data[0]);
-}
-
-int gmf_get_timecode(AVFrameSideData *sd, AVRational avgFrameRate, char *out) {
-	uint32_t *tc = (uint32_t*)sd->data;
-	char tcbuf[AV_TIMECODE_STR_SIZE];
-	av_timecode_make_smpte_tc_string2(tcbuf, avgFrameRate, tc[1], 0, 0);
-	int n;
-	n = sprintf(out, "%s", tcbuf);
-	return n;
-}
-
-*/
 import "C"
 
 import (
